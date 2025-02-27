@@ -96,6 +96,14 @@ pipeline {
                 
             }
         }
+
+        stage ('Dynamic'){
+            when {
+              branch 'feature/multi/*'
+            }
+
+            echo (message:  "Dynamic stage")
+        }
         
         stage('Tests') {
             when{
